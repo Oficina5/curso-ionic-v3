@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { WebservicesProvider } from '../../providers/webservices/webservices';
 
 @Component({
   selector: 'page-list',
@@ -9,8 +10,9 @@ export class ListPage {
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
+  people: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public webservice: WebservicesProvider,  public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
@@ -34,4 +36,30 @@ export class ListPage {
       item: item
     });
   }
+
+  ngOnInit() {
+    this.getPeople();
+  }
+
+  getPeople() {
+    this.webservice.getPeople().subscribe(
+      result => {
+        console.log("entrei");
+        console.log(result);
+        this.people = result.results;
+      },
+
+      error => {
+        console.log("entrei erro");
+        console.log(error);
+      }
+
+    )
+  }
+
+  selectPeople(people) { 
+    console.log(people);
+    this.navCtrl.push('ShowPeoplePage', people);
+  }
+  
 }

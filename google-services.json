@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "975107568101",
+    "firebase_url": "https://oficina5-da6f9.firebaseio.com",
+    "project_id": "oficina5-da6f9",
+    "storage_bucket": "oficina5-da6f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975107568101:android:7dd595bec2f5b2bd",
+        "android_client_info": {
+          "package_name": "com.oficina5.curso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975107568101-8h7el81es0suffcppln94kvnja2iktou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOohW8pHOk4LymUhJS0qbuzbwhXGj0oHQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

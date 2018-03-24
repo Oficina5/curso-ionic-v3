@@ -10,9 +10,25 @@
 <ion-content padding>
   <h3>Ionic Menu Starter</h3>
 
+  <h3>{{cdBarra}}</h3>
+
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
 
   <button ion-button secondary menuToggle>Toggle Menu</button>
+  <button ion-button (click)="presentToast('toast-error', 'bottom')">Test Toast</button>
+  <button ion-button (click)="codigoBarra()">Barcode</button>
+
+  <button ion-button full (click)="takePhoto()">
+    <ion-icon name="camera"> </ion-icon> Tira Foto 2
+  </button>
+
+  <ion-col col-6 *ngFor="let photo of photos; let id = index">
+    <ion-card class="block">
+      <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+      <img [src]="photo" *ngIf="photo" />
+    </ion-card>
+</ion-col>    
+
 </ion-content>

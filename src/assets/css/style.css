@@ -1,0 +1,7 @@
+.toast-success div {
+    background-color: darkgreen;
+}    
+
+.toast-error div {
+    background-color: darkred;
+}    

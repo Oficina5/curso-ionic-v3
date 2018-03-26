@@ -8,27 +8,36 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h3>Curso Ionic v3 Oficina 5</h3>
 
+  <!-- Botão Toast -->
+  <button ion-button (click)="presentToast('toast-error', 'bottom')">Test Toast</button>
+
+  <!-- Botão barcode -->
+  <button ion-button (click)="codigoBarra()">Barcode</button>
+  <!-- Resultado do barcode -->
   <h3>{{cdBarra}}</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-  <button ion-button (click)="presentToast('toast-error', 'bottom')">Test Toast</button>
-  <button ion-button (click)="codigoBarra()">Barcode</button>
-
+  <!-- Botão Camera -->
   <button ion-button full (click)="takePhoto()">
     <ion-icon name="camera"> </ion-icon> Tira Foto 2
   </button>
 
-  <ion-col col-6 *ngFor="let photo of photos; let id = index">
-    <ion-card class="block">
-      <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+  <!-- lista fotos tiradas da camera-->
+  <ion-col col-12 *ngFor="let photo of photos; let id = index">
+    <ion-card>
       <img [src]="photo" *ngIf="photo" />
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name="trash" (click)="deletePhoto(id)"></ion-icon> &emsp; Excluir
+          </button>
+        </ion-col>
+      </ion-row>
+
     </ion-card>
-</ion-col>    
+  </ion-col>
+
+
 
 </ion-content>
